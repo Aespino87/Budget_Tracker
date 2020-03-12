@@ -59,11 +59,5 @@ function checkDatabase() {
     };
 }
 
-function deletePending() {
-    const transaction = db.transaction(["pending"], "readwrite");
-    const store = transaction("pending");
-    store.clear();
-}
-
 // Listens for app coming back online
 window.addEventListener("online", checkDatabase);
